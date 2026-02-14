@@ -12,15 +12,8 @@ public class BasicExample {
         MenstrualCycleCalculatorAPIClient client = new MenstrualCycleCalculatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;last_period&quot;, &quot;2024-01-01&quot;);
-        parameters.put(&quot;cycle_length&quot;, 28);
-        parameters.put(&quot;period_length&quot;, 5);
-        parameters.put(&quot;cycles&quot;, 3);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
