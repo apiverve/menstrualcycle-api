@@ -13,15 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/menstrualcycle';
  */
 async function callMenstrualCycleCalculatorAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            last_period: &#x27;2024-01-01&#x27;,
-            cycle_length: 28,
-            period_length: 5,
-            cycles: 3
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
