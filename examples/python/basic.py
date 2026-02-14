@@ -17,14 +17,11 @@ def call_menstrualcycle_api():
     Make a GET request to the Menstrual Cycle Calculator API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;last_period&#x27;: &#x27;2024-01-01&#x27;, &#x27;cycle_length&#x27;: 28, &#x27;period_length&#x27;: 5, &#x27;cycles&#x27;: 3}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
