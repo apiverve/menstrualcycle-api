@@ -1,56 +1,55 @@
 openapi: 3.0.4
 info:
   title: Menstrual Cycle Calculator
-  description: Menstrual Cycle Calculator predicts future menstrual cycles, fertile windows, and ovulation dates based on cycle history and patterns.
+  description: >-
+    Menstrual Cycle Calculator predicts future menstrual cycles, fertile
+    windows, and ovulation dates based on cycle history and patterns.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/menstrualcycle:
     get:
       summary: Calculate Menstrual Cycles
-      description: Menstrual Cycle Calculator predicts future menstrual cycles, fertile windows, and ovulation dates based on cycle history and patterns.
+      description: Calculate future menstrual cycles and phases
       operationId: menstrualcycle
       parameters:
-      - name: last_period
-        in: query
-        schema:
-          type: string
-        required: true
-        description: First day of last menstrual period (YYYY-MM-DD)
-        example: 2024-01-01
-      - name: cycle_length
-        default: '28'
-        in: query
-        schema:
-          type: number
-        required: false
-        description: Average cycle length in days (21-35)
-        example: '28'
-      - name: period_length
-        default: '5'
-        in: query
-        schema:
-          type: number
-        required: false
-        description: Average period duration in days (2-10)
-        example: '5'
-      - name: cycles
-        default: '3'
-        in: query
-        schema:
-          type: number
-        required: false
-        description: Number of future cycles to calculate (1-12)
-        example: '3'
+        - name: last_period
+          in: query
+          schema:
+            type: string
+          required: true
+          description: First day of last menstrual period (YYYY-MM-DD)
+          example: '2024-01-01'
+        - name: cycle_length
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Average cycle length in days
+          example: 28
+        - name: period_length
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Average period duration in days
+          example: 5
+        - name: cycles
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Number of future cycles to calculate
+          example: 3
       responses:
         '200':
           description: Successful Response
@@ -66,135 +65,137 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  last_period_date: 2024-01-01
+                  last_period_date: '2024-01-01'
                   cycle_length: 28
                   period_length: 5
                   cycles_calculated: 3
                   cycles:
-                  - cycle_number: 1
-                    period:
-                      start_date: 2024-01-01
-                      end_date: 2024-01-05
-                      duration_days: 5
-                    ovulation:
-                      date: 2024-01-15
-                      day_of_cycle: 14
-                    fertile_window:
-                      start_date: 2024-01-10
-                      end_date: 2024-01-15
-                      duration_days: 6
-                    pms_phase:
-                      start_date: 2023-12-21
-                      end_date: 2023-12-31
-                    cycle_phases:
-                      menstrual:
-                        start: 2024-01-01
-                        end: 2024-01-05
-                        description: Menstruation
-                      follicular:
-                        start: 2024-01-06
-                        end: 2024-01-14
-                        description: Follicular phase - preparing for ovulation
+                    - cycle_number: 1
+                      period:
+                        start_date: '2024-01-01'
+                        end_date: '2024-01-05'
+                        duration_days: 5
                       ovulation:
-                        date: 2024-01-15
-                        description: Ovulation - most fertile day
-                      luteal:
-                        start: 2024-01-16
-                        end: 2024-01-28
-                        description: Luteal phase - preparing for next period
-                    status: past
-                    days_until: 
-                    days_ago: 684
-                  - cycle_number: 2
-                    period:
-                      start_date: 2024-01-29
-                      end_date: 2024-02-02
-                      duration_days: 5
-                    ovulation:
-                      date: 2024-02-12
-                      day_of_cycle: 14
-                    fertile_window:
-                      start_date: 2024-02-07
-                      end_date: 2024-02-12
-                      duration_days: 6
-                    pms_phase:
-                      start_date: 2024-01-18
-                      end_date: 2024-01-28
-                    cycle_phases:
-                      menstrual:
-                        start: 2024-01-29
-                        end: 2024-02-02
-                        description: Menstruation
-                      follicular:
-                        start: 2024-02-03
-                        end: 2024-02-11
-                        description: Follicular phase - preparing for ovulation
+                        date: '2024-01-15'
+                        day_of_cycle: 14
+                      fertile_window:
+                        start_date: '2024-01-10'
+                        end_date: '2024-01-15'
+                        duration_days: 6
+                      pms_phase:
+                        start_date: '2023-12-21'
+                        end_date: '2023-12-31'
+                      cycle_phases:
+                        menstrual:
+                          start: '2024-01-01'
+                          end: '2024-01-05'
+                          description: Menstruation
+                        follicular:
+                          start: '2024-01-06'
+                          end: '2024-01-14'
+                          description: Follicular phase - preparing for ovulation
+                        ovulation:
+                          date: '2024-01-15'
+                          description: Ovulation - most fertile day
+                        luteal:
+                          start: '2024-01-16'
+                          end: '2024-01-28'
+                          description: Luteal phase - preparing for next period
+                      status: past
+                      days_until: null
+                      days_ago: 715
+                    - cycle_number: 2
+                      period:
+                        start_date: '2024-01-29'
+                        end_date: '2024-02-02'
+                        duration_days: 5
                       ovulation:
-                        date: 2024-02-12
-                        description: Ovulation - most fertile day
-                      luteal:
-                        start: 2024-02-13
-                        end: 2024-02-25
-                        description: Luteal phase - preparing for next period
-                    status: past
-                    days_until: 
-                    days_ago: 656
-                  - cycle_number: 3
-                    period:
-                      start_date: 2024-02-26
-                      end_date: 2024-03-01
-                      duration_days: 5
-                    ovulation:
-                      date: 2024-03-11
-                      day_of_cycle: 14
-                    fertile_window:
-                      start_date: 2024-03-06
-                      end_date: 2024-03-11
-                      duration_days: 6
-                    pms_phase:
-                      start_date: 2024-02-15
-                      end_date: 2024-02-25
-                    cycle_phases:
-                      menstrual:
-                        start: 2024-02-26
-                        end: 2024-03-01
-                        description: Menstruation
-                      follicular:
-                        start: 2024-03-02
-                        end: 2024-03-10
-                        description: Follicular phase - preparing for ovulation
+                        date: '2024-02-12'
+                        day_of_cycle: 14
+                      fertile_window:
+                        start_date: '2024-02-07'
+                        end_date: '2024-02-12'
+                        duration_days: 6
+                      pms_phase:
+                        start_date: '2024-01-18'
+                        end_date: '2024-01-28'
+                      cycle_phases:
+                        menstrual:
+                          start: '2024-01-29'
+                          end: '2024-02-02'
+                          description: Menstruation
+                        follicular:
+                          start: '2024-02-03'
+                          end: '2024-02-11'
+                          description: Follicular phase - preparing for ovulation
+                        ovulation:
+                          date: '2024-02-12'
+                          description: Ovulation - most fertile day
+                        luteal:
+                          start: '2024-02-13'
+                          end: '2024-02-25'
+                          description: Luteal phase - preparing for next period
+                      status: past
+                      days_until: null
+                      days_ago: 687
+                    - cycle_number: 3
+                      period:
+                        start_date: '2024-02-26'
+                        end_date: '2024-03-01'
+                        duration_days: 5
                       ovulation:
-                        date: 2024-03-11
-                        description: Ovulation - most fertile day
-                      luteal:
-                        start: 2024-03-12
-                        end: 2024-03-24
-                        description: Luteal phase - preparing for next period
-                    status: past
-                    days_until: 
-                    days_ago: 628
+                        date: '2024-03-11'
+                        day_of_cycle: 14
+                      fertile_window:
+                        start_date: '2024-03-06'
+                        end_date: '2024-03-11'
+                        duration_days: 6
+                      pms_phase:
+                        start_date: '2024-02-15'
+                        end_date: '2024-02-25'
+                      cycle_phases:
+                        menstrual:
+                          start: '2024-02-26'
+                          end: '2024-03-01'
+                          description: Menstruation
+                        follicular:
+                          start: '2024-03-02'
+                          end: '2024-03-10'
+                          description: Follicular phase - preparing for ovulation
+                        ovulation:
+                          date: '2024-03-11'
+                          description: Ovulation - most fertile day
+                        luteal:
+                          start: '2024-03-12'
+                          end: '2024-03-24'
+                          description: Luteal phase - preparing for next period
+                      status: past
+                      days_until: null
+                      days_ago: 659
                   current_status:
                     phase: Unknown
                     description: ''
-                    next_period: 
-                    days_until_next_period: 
+                    next_period: null
+                    days_until_next_period: null
                   averages:
                     cycle_length: 28
                     period_duration: 5
                     days_between_periods: 28
-                  disclaimer: This calculator provides estimates only. Actual cycles may vary. Consult a healthcare provider for medical advice.
+                  disclaimer: >-
+                    This calculator provides estimates only. Actual cycles may
+                    vary. Consult a healthcare provider for medical advice.
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -202,4 +203,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
