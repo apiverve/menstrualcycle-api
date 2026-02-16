@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/menstrualcycle",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Menstrual Cycle Calculator predicts future menstrual cycles, fertile windows, and ovulation dates based on cycle history and patterns.",
   "main": "index.js",
   "types": "index.d.ts",
