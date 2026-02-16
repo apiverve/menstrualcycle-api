@@ -44,7 +44,12 @@ from apiverve_menstrualcyclecalculator.apiClient import MenstrualcycleAPIClient
 # Initialize the client with your APIVerve API key
 api = MenstrualcycleAPIClient("[YOUR_API_KEY]")
 
-query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
 
 try:
     # Make the API call
@@ -82,7 +87,12 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
 ```
 
 ###### Simple Request
@@ -272,7 +282,12 @@ from apiverve_menstrualcyclecalculator.apiClient import MenstrualcycleAPIClient,
 
 api = MenstrualcycleAPIClient("[YOUR_API_KEY]")
 
-query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
 
 try:
     result = api.execute(query)
@@ -293,7 +308,12 @@ from apiverve_menstrualcyclecalculator.apiClient import MenstrualcycleAPIClient,
 
 api = MenstrualcycleAPIClient("[YOUR_API_KEY]")
 
-query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
 
 try:
     result = api.execute(query)
@@ -327,7 +347,12 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_menstrualcyclecalculator.apiClient import MenstrualcycleAPIClient, MenstrualcycleAPIClientError
 
-query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
 
 # Using context manager ensures proper cleanup
 with MenstrualcycleAPIClient("[YOUR_API_KEY]") as api:
@@ -353,7 +378,12 @@ from apiverve_menstrualcyclecalculator.apiClient import MenstrualcycleAPIClient
 # Enable debug mode
 api = MenstrualcycleAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -368,8 +398,14 @@ from apiverve_menstrualcyclecalculator.apiClient import MenstrualcycleAPIClient
 
 api = MenstrualcycleAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "period_length": 5,
+    "cycles": 3
+}
+
 try:
-    query = { "last_period": "2024-01-01", "cycle_length": 28, "period_length": 5, "cycles": 3 }
     result = api.execute(query)
     print(result)
 finally:
