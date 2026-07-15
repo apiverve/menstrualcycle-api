@@ -4,48 +4,60 @@ declare module '@apiverve/menstrualcycle' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface menstrualcycleResponse {
     status: string;
     error: string | null;
     data: MenstrualCycleCalculatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface MenstrualCycleCalculatorData {
-      lastPeriodDate:   Date;
-      cycleLength:      number;
-      periodLength:     number;
-      cyclesCalculated: number;
+      lastPeriodDate:   Date | null;
+      cycleLength:      number | null;
+      periodLength:     number | null;
+      cyclesCalculated: number | null;
       cycles:           Cycle[];
       currentStatus:    CurrentStatus;
       averages:         Averages;
-      disclaimer:       string;
+      disclaimer:       null | string;
   }
   
   interface Averages {
-      cycleLength:        number;
-      periodDuration:     number;
-      daysBetweenPeriods: number;
+      cycleLength:        number | null;
+      periodDuration:     number | null;
+      daysBetweenPeriods: number | null;
   }
   
   interface CurrentStatus {
-      phase:               string;
-      description:         string;
+      phase:               null | string;
+      description:         null | string;
       nextPeriod:          null;
       daysUntilNextPeriod: null;
   }
   
   interface Cycle {
-      cycleNumber:   number;
+      cycleNumber:   number | null;
       period:        FertileWindow;
       ovulation:     CycleOvulation;
       fertileWindow: FertileWindow;
       pmsPhase:      PmsPhase;
       cyclePhases:   CyclePhases;
-      status:        string;
+      status:        null | string;
       daysUntil:     null;
-      daysAgo:       number;
+      daysAgo:       number | null;
   }
   
   interface CyclePhases {
@@ -56,30 +68,30 @@ declare module '@apiverve/menstrualcycle' {
   }
   
   interface Follicular {
-      start:       Date;
-      end:         Date;
-      description: string;
+      start:       Date | null;
+      end:         Date | null;
+      description: null | string;
   }
   
   interface CyclePhasesOvulation {
-      date:        Date;
-      description: string;
+      date:        Date | null;
+      description: null | string;
   }
   
   interface FertileWindow {
-      startDate:    Date;
-      endDate:      Date;
-      durationDays: number;
+      startDate:    Date | null;
+      endDate:      Date | null;
+      durationDays: number | null;
   }
   
   interface CycleOvulation {
-      date:       Date;
-      dayOfCycle: number;
+      date:       Date | null;
+      dayOfCycle: number | null;
   }
   
   interface PmsPhase {
-      startDate: Date;
-      endDate:   Date;
+      startDate: Date | null;
+      endDate:   Date | null;
   }
 
   export default class menstrualcycleWrapper {
