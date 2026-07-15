@@ -179,7 +179,7 @@ async function makeRequest() {
         },
         "status": "past",
         "days_until": null,
-        "days_ago": 684
+        "days_ago": 715
       },
       {
         "cycle_number": 2,
@@ -224,7 +224,7 @@ async function makeRequest() {
         },
         "status": "past",
         "days_until": null,
-        "days_ago": 656
+        "days_ago": 687
       },
       {
         "cycle_number": 3,
@@ -269,7 +269,7 @@ async function makeRequest() {
         },
         "status": "past",
         "days_until": null,
-        "days_ago": 628
+        "days_ago": 659
       }
     ],
     "current_status": {
