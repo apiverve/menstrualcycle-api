@@ -25,21 +25,24 @@ namespace APIVerve.API.MenstrualCycleCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("last_period_date")]
-        public DateTimeOffset LastPeriodDate { get; set; }
+        public DateTimeOffset? LastPeriodDate { get; set; }
 
         [JsonProperty("cycle_length")]
-        public long CycleLength { get; set; }
+        public long? CycleLength { get; set; }
 
         [JsonProperty("period_length")]
-        public long PeriodLength { get; set; }
+        public long? PeriodLength { get; set; }
 
         [JsonProperty("cycles_calculated")]
-        public long CyclesCalculated { get; set; }
+        public long? CyclesCalculated { get; set; }
 
         [JsonProperty("cycles")]
         public Cycle[] Cycles { get; set; }
@@ -57,13 +60,13 @@ namespace APIVerve.API.MenstrualCycleCalculator
     public partial class Averages
     {
         [JsonProperty("cycle_length")]
-        public long CycleLength { get; set; }
+        public long? CycleLength { get; set; }
 
         [JsonProperty("period_duration")]
-        public long PeriodDuration { get; set; }
+        public long? PeriodDuration { get; set; }
 
         [JsonProperty("days_between_periods")]
-        public long DaysBetweenPeriods { get; set; }
+        public long? DaysBetweenPeriods { get; set; }
     }
 
     public partial class CurrentStatus
@@ -84,7 +87,7 @@ namespace APIVerve.API.MenstrualCycleCalculator
     public partial class Cycle
     {
         [JsonProperty("cycle_number")]
-        public long CycleNumber { get; set; }
+        public long? CycleNumber { get; set; }
 
         [JsonProperty("period")]
         public FertileWindow Period { get; set; }
@@ -108,7 +111,7 @@ namespace APIVerve.API.MenstrualCycleCalculator
         public object DaysUntil { get; set; }
 
         [JsonProperty("days_ago")]
-        public long DaysAgo { get; set; }
+        public long? DaysAgo { get; set; }
     }
 
     public partial class CyclePhases
@@ -129,10 +132,10 @@ namespace APIVerve.API.MenstrualCycleCalculator
     public partial class Follicular
     {
         [JsonProperty("start")]
-        public DateTimeOffset Start { get; set; }
+        public DateTimeOffset? Start { get; set; }
 
         [JsonProperty("end")]
-        public DateTimeOffset End { get; set; }
+        public DateTimeOffset? End { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -141,7 +144,7 @@ namespace APIVerve.API.MenstrualCycleCalculator
     public partial class CyclePhasesOvulation
     {
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -150,30 +153,42 @@ namespace APIVerve.API.MenstrualCycleCalculator
     public partial class FertileWindow
     {
         [JsonProperty("start_date")]
-        public DateTimeOffset StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         [JsonProperty("end_date")]
-        public DateTimeOffset EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; set; }
 
         [JsonProperty("duration_days")]
-        public long DurationDays { get; set; }
+        public long? DurationDays { get; set; }
     }
 
     public partial class CycleOvulation
     {
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("day_of_cycle")]
-        public long DayOfCycle { get; set; }
+        public long? DayOfCycle { get; set; }
     }
 
     public partial class PmsPhase
     {
         [JsonProperty("start_date")]
-        public DateTimeOffset StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         [JsonProperty("end_date")]
-        public DateTimeOffset EndDate { get; set; }
+        public DateTimeOffset? EndDate { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
