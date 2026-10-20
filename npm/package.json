@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/menstrualcycle",
-  "version": "1.2.0",
-  "description": "Menstrual Cycle Calculator predicts future menstrual cycles, fertile windows, and ovulation dates based on cycle history and patterns.",
+  "version": "1.2.2",
+  "description": "Menstrual Cycle Calculator is a period tracker API that predicts future menstrual cycles, fertile windows, and ovulation dates from the last period date and the average cycle and period length.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "menstrual cycle", "period tracker", "cycle calculator", "period calendar", "menstruation tracker"
+    "menstrual cycle api", "period tracker api", "menstrual cycle calculator api", "menstrual period predictor", "next period date calculator"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/menstrualcycle-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/menstrualcycle?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/menstrualcycle?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
