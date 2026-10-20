@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: Menstrual Cycle Calculator
   description: >-
-    Menstrual Cycle Calculator predicts future menstrual cycles, fertile
-    windows, and ovulation dates based on cycle history and patterns.
+    Menstrual Cycle Calculator is a period tracker API that predicts future
+    menstrual cycles, fertile windows, and ovulation dates from the last period
+    date and the average cycle and period length.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/menstrualcycle:
     get:
-      summary: Calculate Menstrual Cycles
+      summary: Menstrual Cycle Calculator
       description: Calculate future menstrual cycles and phases
       operationId: menstrualcycle
       parameters:
