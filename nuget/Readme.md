@@ -1,13 +1,12 @@
-MenstrualCycleCalculator API
+Menstrual Cycle Calculator API
 ============
 
-Menstrual Cycle Calculator predicts future menstrual cycles, fertile windows, and ovulation dates based on cycle history and patterns.
+Menstrual Cycle Calculator is a period tracker API that predicts future menstrual cycles, fertile windows, and ovulation dates from the last period date and the average cycle and period length.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [MenstrualCycleCalculator API](https://apiverve.com/marketplace/menstrualcycle?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.MenstrualCycleCalculator.svg)](https://www.nuget.org/packages/APIVerve.API.MenstrualCycleCalculator)
+
+This is a .NET wrapper for the [Menstrual Cycle Calculator API](https://apiverve.com/marketplace/menstrualcycle?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the menstrualcycle API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Menstrual Cycle Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,11 +60,11 @@ class Program
         var apiClient = new MenstrualCycleCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MenstrualCycleCalculatorQueryOptions {
-    Last_period = "2024-01-01",
-    Cycle_length = 28,
-    Period_length = 5,
-    Cycles = 3
-};
+            Last_period = "2024-01-01",
+            Cycle_length = 28,
+            Period_length = 5,
+            Cycles = 3
+        };
 
         // Make the API call
         try
@@ -95,13 +94,13 @@ class Program
 
 ## Usage
 
-The MenstrualCycleCalculator API documentation is found here: [https://docs.apiverve.com/ref/menstrualcycle](https://docs.apiverve.com/ref/menstrualcycle?utm_source=nuget&utm_medium=readme).
+The Menstrual Cycle Calculator API documentation is found here: [https://docs.apiverve.com/ref/menstrualcycle](https://docs.apiverve.com/ref/menstrualcycle?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-MenstrualCycleCalculator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Menstrual Cycle Calculator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -128,11 +127,11 @@ public class Example
         var apiClient = new MenstrualCycleCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MenstrualCycleCalculatorQueryOptions {
-    Last_period = "2024-01-01",
-    Cycle_length = 28,
-    Period_length = 5,
-    Cycles = 3
-};
+            Last_period = "2024-01-01",
+            Cycle_length = 28,
+            Period_length = 5,
+            Cycles = 3
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -163,11 +162,11 @@ public class Example
         var apiClient = new MenstrualCycleCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MenstrualCycleCalculatorQueryOptions {
-    Last_period = "2024-01-01",
-    Cycle_length = 28,
-    Period_length = 5,
-    Cycles = 3
-};
+            Last_period = "2024-01-01",
+            Cycle_length = 28,
+            Period_length = 5,
+            Cycles = 3
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -203,11 +202,11 @@ public class Example
         var apiClient = new MenstrualCycleCalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MenstrualCycleCalculatorQueryOptions {
-    Last_period = "2024-01-01",
-    Cycle_length = 28,
-    Period_length = 5,
-    Cycles = 3
-};
+            Last_period = "2024-01-01",
+            Cycle_length = 28,
+            Period_length = 5,
+            Cycles = 3
+        };
 
         try
         {
@@ -262,11 +261,11 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new MenstrualCycleCalculatorQueryOptions {
-    Last_period = "2024-01-01",
-    Cycle_length = 28,
-    Period_length = 5,
-    Cycles = 3
-};
+            Last_period = "2024-01-01",
+            Cycle_length = 28,
+            Period_length = 5,
+            Cycles = 3
+        };
 
         try
         {
@@ -555,7 +554,7 @@ using (var apiClient = new MenstrualCycleCalculatorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -566,12 +565,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
