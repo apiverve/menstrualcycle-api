@@ -1,13 +1,12 @@
 Menstrual Cycle Calculator API
 ============
 
-Menstrual Cycle Calculator predicts future menstrual cycles, fertile windows, and ovulation dates based on cycle history and patterns.
+Menstrual Cycle Calculator is a period tracker API that predicts future menstrual cycles, fertile windows, and ovulation dates from the last period date and the average cycle and period length.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Menstrual Cycle Calculator API](https://apiverve.com/marketplace/menstrualcycle?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-menstrualcyclecalculator.svg)](https://pypi.org/project/apiverve-menstrualcyclecalculator/)
+
+This is a Python wrapper for the [Menstrual Cycle Calculator API](https://apiverve.com/marketplace/menstrualcycle?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-menstrualcyclecalculator
 
 ## Configuration
 
-Before using the menstrualcycle API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Menstrual Cycle Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -65,7 +64,7 @@ except Exception as e:
 
 ## Usage
 
-The Menstrual Cycle Calculator API documentation is found here: [https://docs.apiverve.com/ref/menstrualcycle](https://docs.apiverve.com/ref/menstrualcycle?utm_source=pypi&utm_medium=readme).
+The Menstrual Cycle Calculator API documentation is found here: [https://docs.apiverve.com/ref/menstrualcycle](https://docs.apiverve.com/ref/menstrualcycle?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -160,7 +159,7 @@ print(result)
         },
         "status": "past",
         "days_until": null,
-        "days_ago": 684
+        "days_ago": 715
       },
       {
         "cycle_number": 2,
@@ -205,7 +204,7 @@ print(result)
         },
         "status": "past",
         "days_until": null,
-        "days_ago": 656
+        "days_ago": 687
       },
       {
         "cycle_number": 3,
@@ -250,7 +249,7 @@ print(result)
         },
         "status": "past",
         "days_until": null,
-        "days_ago": 628
+        "days_ago": 659
       }
     ],
     "current_status": {
@@ -417,7 +416,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -428,12 +427,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
