@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/menstrualcycle",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Menstrual Cycle Calculator is a period tracker API that predicts future menstrual cycles, fertile windows, and ovulation dates from the last period date and the average cycle and period length.",
   "main": "index.js",
   "types": "index.d.ts",
